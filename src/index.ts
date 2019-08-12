@@ -5,7 +5,7 @@ const REACT_APP_PACKAGE_NAME = "com.thekinapp.dev";
 const REACT_APP_DYNAMIC_LINK_DOMAIN = "thekinapp.page.link";
 const REACT_APP_IOS_APP_ID = "1437611153";
 
-function dynamicLinkBuilder(url: string): string {
+export function dynamicLinkBuilder(url: string): string {
     const isAndroid = url.indexOf('play.google.com') >= 0;
     let currentPage = window.location.href.replace("http://localhost:3000", "https://web.dev.thekinapp.com");
     currentPage = UrlHelper.appendQueryString(currentPage, "anid", getSegmentAnon());
