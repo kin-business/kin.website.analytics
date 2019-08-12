@@ -1,7 +1,7 @@
 import UrlHelper from "./url-helper";
 
-const REACT_APP_BUNDLE_ID = "com.thekinapp.dev";
-const REACT_APP_PACKAGE_NAME = "com.thekinapp.dev";
+const REACT_APP_BUNDLE_ID = "com.thekinapp.prod";
+const REACT_APP_PACKAGE_NAME = "com.thekinapp.prod";
 const REACT_APP_DYNAMIC_LINK_DOMAIN = "thekinapp.page.link";
 const REACT_APP_IOS_APP_ID = "1437611153";
 
