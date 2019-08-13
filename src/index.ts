@@ -2,7 +2,7 @@ import UrlHelper from "./url-helper";
 
 const REACT_APP_BUNDLE_ID = "com.thekinapp.prod";
 const REACT_APP_PACKAGE_NAME = "com.thekinapp.prod";
-const REACT_APP_DYNAMIC_LINK_DOMAIN = "thekinapp.page.link";
+const REACT_APP_DYNAMIC_LINK_DOMAIN = "kinapp.page.link";
 const REACT_APP_IOS_APP_ID = "1437611153";
 
 export function dynamicLinkBuilder(url: string): string {
@@ -19,7 +19,6 @@ export function dynamicLinkBuilder(url: string): string {
         url = UrlHelper.appendQueryString(url, "ibi", REACT_APP_BUNDLE_ID as string);
         url = UrlHelper.appendQueryString(url, "isi", REACT_APP_IOS_APP_ID as string);
         url = UrlHelper.appendQueryString(url, "efr", "1");
-
     }
     return url;
 }
