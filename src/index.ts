@@ -1,9 +1,10 @@
 import UrlHelper from "./url-helper";
 
-const REACT_APP_BUNDLE_ID = "com.thekinapp.prod";
-const REACT_APP_PACKAGE_NAME = "com.thekinapp";
+const REACT_APP_BUNDLE_ID = "com.thekinapp";
+const REACT_APP_PACKAGE_NAME = "com.thekinapp.prod";
 const REACT_APP_DYNAMIC_LINK_DOMAIN = "kinapp.page.link";
 const REACT_APP_IOS_APP_ID = "1437611153";
+const REACT_APP_IOS_WEB_FALLBACK = 'https://itunes.apple.com/za/app/kin/id1437611153?mt=8';
 
 export function dynamicLinkBuilder(url: string): string {
     const isAndroid = url.indexOf('play.google.com') >= 0;
@@ -18,6 +19,7 @@ export function dynamicLinkBuilder(url: string): string {
         url = UrlHelper.appendQueryString(url, "apn", REACT_APP_PACKAGE_NAME as string);
         url = UrlHelper.appendQueryString(url, "ibi", REACT_APP_BUNDLE_ID as string);
         url = UrlHelper.appendQueryString(url, "isi", REACT_APP_IOS_APP_ID as string);
+        url = UrlHelper.appendQueryString(url, "ofl", REACT_APP_IOS_WEB_FALLBACK as string);
         url = UrlHelper.appendQueryString(url, "efr", "1");
     }
     return url;
@@ -50,6 +52,7 @@ function getSegmentAnon(): string | null {
             })
             .map(cookie => {
                 return decodeURIComponent(cookie.substring(name.length + 1));
-            })[0].replace(/"/g, "") || null;
+            })
+            .map(url => url.replace(/"/g, ""))[0] || null;
     return value;
 }
