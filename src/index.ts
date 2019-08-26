@@ -5,11 +5,12 @@ const REACT_APP_PACKAGE_NAME = "com.thekinapp.prod";
 const REACT_APP_DYNAMIC_LINK_DOMAIN = "kinapp.page.link";
 const REACT_APP_IOS_APP_ID = "1437611153";
 const REACT_APP_IOS_WEB_FALLBACK = 'https://itunes.apple.com/za/app/kin/id1437611153?mt=8';
+const REACT_APP_ANDROID_PAGE = "https://thekinapp.com";
 
 export function dynamicLinkBuilder(url: string): string {
     const isAndroid = url.indexOf('play.google.com') >= 0;
-    let currentPage = window.location.href.replace("http://localhost:3000", "https://web.dev.thekinapp.com");
-    currentPage = UrlHelper.appendQueryString(currentPage, "anid", getSegmentAnon());
+    // let currentPage = window.location.href.replace("http://localhost:3000", "https://web.dev.thekinapp.com");
+    let currentPage = UrlHelper.appendQueryString(REACT_APP_ANDROID_PAGE, "anid", getSegmentAnon());
     if (isAndroid) {
         url = UrlHelper.appendQueryString(url, "url", currentPage);
     }
