@@ -21,7 +21,7 @@ export function dynamicLinkBuilder(url: string): string {
         url = UrlHelper.appendQueryString(url, "ibi", REACT_APP_BUNDLE_ID as string);
         url = UrlHelper.appendQueryString(url, "isi", REACT_APP_IOS_APP_ID as string);
         url = UrlHelper.appendQueryString(url, "ofl", REACT_APP_IOS_WEB_FALLBACK as string);
-        url = UrlHelper.appendQueryString(url, "efr", "1");
+        // url = UrlHelper.appendQueryString(url, "efr", "1");
     }
     return url;
 }
