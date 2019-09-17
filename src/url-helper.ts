@@ -20,7 +20,7 @@ class UrlHelper {
     if(uri.includes('?')) {
       seperator = '&';
     }
-    return `${uri}${seperator}${key}=${encodeURI(value)}`;
+    return `${uri}${seperator}${key}=${encodeURIComponent(value)}`;
   }
 
     /**
